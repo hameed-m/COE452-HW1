@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            background-color: #2196F3;
+        }
+        input {
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: 30px;
+        }
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: 75.2% auto;
+            padding: 10px;
+            width: 80%;
+        }
+
+        .grid-container2 {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            padding: 10px;
+            width: 80%;
+        }
+
+        .grid-item {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .grid-text {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <center>
+        <div class="grid-container1">
+            <input type="text" class="grid-text" id="input_field">
+            <input type="button" value="=" class="grid-item" onclick="submit()">
+        </div>
+        <div class="grid-container2">
+            <input type="button" value="8" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="7" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="9" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="÷" class="grid-item" onclick="read_input(this)" style="background-color:rgba(47, 26, 92, 0.639)">
+            <input type="button" value="4" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="5" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="6" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="×" class="grid-item" onclick="read_input(this)" style="background-color:rgba(47, 26, 92, 0.639)">
+            <input type="button" value="1" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="2" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="3" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="-" class="grid-item" onclick="read_input(this)" style="background-color:rgba(47, 26, 92, 0.639)">
+            <input type="button" value="C" class="grid-item" onclick="read_input(this)" style="background-color:rgba(156, 73, 73, 0.639)">
+            <input type="button" value="0" class="grid-item" onclick="read_input(this)">
+            <input type="button" value="←" class="grid-item" onclick="read_input(this)" style="background-color:rgba(156, 73, 73, 0.639)">
+            <input type="button" value="+" class="grid-item" onclick="read_input(this)" style="background-color:rgba(47, 26, 92, 0.639)">
+          </div>
+    </center>
+    <footer>
+        <label for="">@ All Rights Reserved For KFUPM-COE - 2022</label>
+    </footer>
+</body>
+</html>
