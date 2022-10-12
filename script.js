@@ -3,6 +3,12 @@ let o = null;
 let x = null;
 let y = null;
 let after_result = false;
+operators = {
+    "+": "add",
+    "-": "sub",
+    "×": "mul",
+    "÷": "div"
+}
 
 function read_input(element){
 
@@ -47,28 +53,18 @@ function read_input(element){
 
 function submit(){
     if(!after_result){
-        fetch('https://0p5wanp0ob.execute-api.eu-west-1.amazonaws.com/calculate?x=-9&y=17&o=sub').then(function(response) {
-            return response.json();
-          }).then(function(data) {
-            console.log(data);
-          }).catch(function() {
-            console.log("Booo");
-          });
-        
         input_field = document.getElementById("input_field").value;
-        y = input_field.substring(input_field.indexOf(o)+1)
-        document.getElementById("input_field").value = parseInt(x)+parseInt(y);
+        y = input_field.substring(input_field.lastIndexOf(o)+1)
+        onGet();
+        
+        
         after_result = true;
     }
 }
 
-function httpGetAsync(theUrl, callback)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
+function onGet() {
+    const url = 'https://0p5wanp0ob.execute-api.eu-west-1.amazonaws.com/calculate?x='+x+'&y='+y+'&o='+operators[o];
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => document.getElementById("input_field").value = data['r']);
 }
